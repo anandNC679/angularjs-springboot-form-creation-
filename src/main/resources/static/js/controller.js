@@ -1,8 +1,36 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngRoute']);
 
 // #######################
 // POST CONTROLLER
 // #######################
+
+/*
+app.config(function($routeProvider) {
+	$routeProvider
+		.when('/view1', {
+			templateUrl: "<h1>Main</h1><p>Click on the links to change this content</p>"
+			//controller: 'reDirectCtrl'
+		})
+		.when('/view2', {
+			templateUrl: 'firstPage.html',
+			controller: 'reDirectCtrl'
+		})
+		.otherwise({
+			redirectTo: '/view3',
+			templateUrl: "<h1>Main</h1><p>Click on the links to change this content</p>"
+		});
+});
+*/
+
+app.controller('reDirectCtrl',function($scope, $http, $location){
+
+    $scope.redirect = function(){
+    alert(1000);
+    window.location.replace("firstPage.html");
+     //$location.replace('firstPage.html');
+      //window.location='firstPage.html';
+    }
+});
 
 app.controller('postcontroller', function($scope, $http, $location) {
 

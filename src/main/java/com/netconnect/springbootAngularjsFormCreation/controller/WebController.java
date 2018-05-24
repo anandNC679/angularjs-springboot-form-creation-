@@ -13,4 +13,9 @@ public class WebController {
     public String homepage(){
         return "index";
     }
+
+    @GetMapping(value="/form")
+    public String formPage(){
+        return "firstPage";
+    }
 }
